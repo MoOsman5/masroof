@@ -1,4 +1,5 @@
 using MongoDB.Driver;
+using Masroof.Api.Repositories;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,6 +27,7 @@ builder.Services.AddSingleton<IMongoDatabase>(sp =>
 
     return client.GetDatabase(dbName);
 });
+builder.Services.AddSingleton<ExpenseRepository>();
 var app = builder.Build();
 
 

@@ -1,6 +1,9 @@
-@Masroof.Api_HostAddress = http://localhost:5142
+POST http://localhost:5142/expenses
+Content-Type: application/json
 
-GET {{Masroof.Api_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
+{
+  "title": "Office internet",
+  "amount": 450.50,
+  "category": "Utilities",
+  "date": "2026-11-12T00:00:00Z"
+}
