@@ -1,4 +1,8 @@
-POST http://localhost:5142/expenses
+@baseUrl = http://localhost:5142
+@id = PUT_EXPENSE_ID_HERE
+
+### Create expense
+POST {{baseUrl}}/expenses
 Content-Type: application/json
 
 {
@@ -7,3 +11,24 @@ Content-Type: application/json
   "category": "Utilities",
   "date": "2026-11-12T00:00:00Z"
 }
+
+### List expenses
+GET {{baseUrl}}/expenses
+
+### Get expense by id
+GET {{baseUrl}}/expenses/{{id}}
+
+### Update expense
+PUT {{baseUrl}}/expenses/{{id}}
+Content-Type: application/json
+
+{
+  "title": "Office internet (Nov)",
+  "amount": 500,
+  "category": "Utilities",
+  "currency": "EGP",
+  "date": "2026-11-12T00:00:00Z"
+}
+
+### Delete expense
+DELETE {{baseUrl}}/expenses/{{id}}
